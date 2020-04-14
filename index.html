@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.angularjs.org/1.6.1/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body
+    ng-app="weatherApp"
+    ng-controller="weatherController"
+    class="text-center info"
+    ng-style="weatherBackground"
+  >
+    <h1>{{chanelInfo.heading}}</h1>
+    <h2>{{chanelInfo.subheading}}</h2>
+    <h3>
+      <a ng-href="{{chanelInfo.subheading2.link}}" target="blank">
+        {{chanelInfo.subheading2.name}}</a
+      >
+    </h3>
+    <br />
+    <a class="btn-lg btn-primary"
+      >{{description | uppercase}} <img ng-src="{{icon}}"
+    /></a>
+    <a class="btn-lg btn-primary">{{speed}}</a>
+    <a class="btn-lg btn-primary">{{name}}</a>
+    <a
+      class="btn-lg btn-primary"
+      ng-init="tempVal=true"
+      ng-show="tempVal"
+      ng-click="tempVal=!tempVal"
+      >{{fTemp}}</a
+    >
+    <a class="btn-lg btn-primary" ng-show="!tempVal" ng-click="tempVal=!tempVal"
+      >{{cTemp}}</a
+    >
+  </body>
+</html>
